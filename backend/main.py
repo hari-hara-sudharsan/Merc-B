@@ -23,3 +23,8 @@ def onboarding(data: OnboardingInput):
 @app.get("/report/{user_id}")
 def get_report(user_id: int):
     return fetch_report(user_id)
+from chat import chat_with_ai
+
+@app.post("/chat")
+def chat(prompt: str):
+    return {"response": chat_with_ai(prompt)}
