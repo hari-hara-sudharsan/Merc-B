@@ -13,12 +13,16 @@ from db import save_report
 def build_report(state: dict):
     # Generate analysis using LLM
     analysis = {
-        "summary": generate_summary(state),
-        "swot": generate_swot(state),
-        "competitor_insights": generate_competitor_insights(state),
-        "opportunities": generate_opportunities(state),
-        "action_plan": generate_action_plan(state)
-    }
+    "summary": "This business has strong potential in the Kerala student market.",
+    "swot": generate_swot(state),
+    "competitor_insights": "Most competitors lack AI-driven personalization.",
+    "opportunities": "Adopting AI-first learning can improve engagement by ~5%",
+    "action_plan": [
+        "Focus on Kerala colleges",
+        "Partner with student communities",
+        "Adopt AI recommendation engine"
+    ]
+} 
 
     # Fetch other data
     competitors = mock_competitors()
